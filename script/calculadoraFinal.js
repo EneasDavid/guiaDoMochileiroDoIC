@@ -1,44 +1,46 @@
-// Declaração de media
 let media=0;
-let notaFinalAluno=5.5;
+let notaFinalAluno=0;
 
-const startButton = document.querySelector("[data-calcular-button]");
-
-// Recebendo as notas
+// Selecionar os elementos
 const notaUm=document.querySelector("[data-notaUm-input]");
 const notaDois=document.querySelector("[data-notaDois-input]");
-
-// Recebendo o elemento onde você deseja mostrar a média
 const valorMedia=document.querySelector("[data-valor-mediaRegular]");
-
-// Recebendo o elemento onde você deseja mostrar a nota final
 const valorNotaFinal=document.querySelector("[data-valor-NotaFinal]");
 
-// usa if ternário para verificar situação do aluno em relação à média normal
-function executa(){
-    // Função para executar as funções de cálculo
-    calcMedia();
-    const final=media<7&&media>=5?1:0;
-    if(final){
-        calculaFinal();
-    }else{
-        if(media<5){
-            valorNotaFinal.textContent="Infellizmente você não pode fazer a final!";
-        }else{
-            valorNotaFinal.textContent="Parabéns, você conseguiu passar com a média regular!";            
-        }
-    }
-    startButton.removeEventListener("click", executa);
-}
 function calcMedia(){
-    // Função que calcula a média do aluno
     media=(parseFloat(notaUm.value)+parseFloat(notaDois.value))/2;
     valorMedia.textContent=media;
 }
 
 function calculaFinal(){
-    // Função para calcular quanto o aluno precisa tirar na final com base na média regular
-    notaFinalAluno=(notaFinalAluno-(media*.6))/.4;
-    valorNotaFinal.textContent=notaFinalAluno;
+    const mediaFinal=5.5;
+    notaFinalAluno=(mediaFinal-(media*.6))/.4;
+    valorNotaFinal.textContent = notaFinalAluno;
 }
-startButton.addEventListener("click", executa);
+
+function executa(){
+    // Verificar se os campos de nota estão vazios
+    if (notaUm.value.trim()==='' || notaDois.value.trim()===''){
+        valorMedia.textContent="";
+        valorNotaFinal.textContent="Digite ambas as notas para podermos calcular";
+        return; // Sai da função se um ou ambos os campos estiverem vazios
+    }
+    // Função para executar as funções de cálculo
+    calcMedia();
+    const final=media>=5&&media<7?1:0;
+    if(final){
+        calculaFinal();
+    }else{
+        if(media<5){
+            valorNotaFinal.textContent="Infelizmente você não pode fazer a final!";
+        }else{
+            valorNotaFinal.textContent="Parabéns, você conseguiu passar com a média regular!";
+        }
+    }
+}
+
+//ouvinte de eventos de entrada para cada campo de nota
+notaUm.addEventListener("input", executa);
+notaDois.addEventListener("input", executa);
+
+executa();
