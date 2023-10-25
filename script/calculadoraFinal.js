@@ -18,11 +18,15 @@ const valorNotaFinal=document.querySelector("[data-valor-NotaFinal]");
 function executa(){
     // Função para executar as funções de cálculo
     calcMedia();
-    const final=media<7?1:0;
+    const final=media<7&&media>=5?1:0;
     if(final){
         calculaFinal();
     }else{
-        valorNotaFinal.textContent="Parabéns, você conseguiu passar com a média regular!";
+        if(media<5){
+            valorNotaFinal.textContent="Infellizmente você não pode fazer a final!";
+        }else{
+            valorNotaFinal.textContent="Parabéns, você conseguiu passar com a média regular!";            
+        }
     }
     startButton.removeEventListener("click", executa);
 }

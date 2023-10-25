@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculo Final</title>
-    <link rel="stylesheet" href="/calculoFinal/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <nav>
@@ -15,13 +15,13 @@
     <main>
         <container>
             <div>
-                <input type="number" step="0.01" min="0" max="10" data-notaUm-input>
-                <input type="number" step="0.01" min="0" max="10" data-notaDois-input>
+                <input name="notaUm" type="number" step="0.01" min="0" max="10" data-notaUm-input placeholder="Nota 1ºAB">
+                <input name="notaDois" type="number" step="0.01" min="0" max="10" data-notaDois-input placeholder="Nota 2ºAB">
                 <button class="button" data-calcular-button onclick="executa()">Calcular</button>
             </div>
 
             <div>
-                <p class="notaFinal" data-valor-mediaRegular></p> 
+                <p class="mediaRegular" data-valor-mediaRegular></p> 
                 <p class="notaFinal" data-valor-notaFinal></p> 
             </div>
         </container>
@@ -30,6 +30,5 @@
 <footer>
 
 </footer>
-<script src="/calculoFinal/script/calculadoraFinal.js"></script>
+<script src="script/calculadoraFinal.js"></script>
 </html>
-```
