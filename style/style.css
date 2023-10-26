@@ -67,6 +67,7 @@ p{
     /* For mobile phones: */
     [class*="divMetade"] {
       width: 100%;
+      margin-bottom: 1rem;
     }
 }
 .regular{

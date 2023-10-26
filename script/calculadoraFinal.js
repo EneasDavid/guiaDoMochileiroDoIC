@@ -25,6 +25,7 @@ function calculaFinal() {
 }
 
 function executa() {
+    limpar(valorNotaFinal);
     // Verificar se os campos de nota estão vazios
     if (notaUm.value.trim() === '' || notaDois.value.trim() === '') {
         const mensagemMediaHTML="<span><i class='regular'>Insira as duas notas</i> para calcular a média regular!</span>";
@@ -41,14 +42,13 @@ function executa() {
         if(final) calculaFinal();
         else{
             if(media<5){
-                limpar(valorMedia);
                 const mensagemMediaHTML="<span><bold class='alerta'>Infelizmente você não pode fazer a final!</bold></span>";
                 valorMedia.innerHTML=mensagemMediaHTML;
             }else{
                 const mensagemMediaHTML="<span>Parabéns, <i class='regular'>você passou!</i></span>";
                 valorMedia.innerHTML=mensagemMediaHTML;
             }
-            }
+        }
     }
 }
 // Ouvinte de eventos de entrada para cada campo de nota
