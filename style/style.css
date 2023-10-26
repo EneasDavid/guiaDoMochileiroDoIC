@@ -4,10 +4,12 @@
    margin: 0;
    padding: 0;
 }
+html, body {
+    min-height: 100%;
+}
 body {
     height: 100vh;
     margin: 0;
-    color: var(--bs-body-color);
     background-color: #3f3939;
 }
 main {
@@ -15,7 +17,7 @@ main {
     padding-left: 5px;
     padding-right: 5px;
     display: grid;
-    grid-template-columns: 60px auto 60px;
+    grid-template-columns: 60px auto 60px; /* Use 1fr para preencher a largura restante */
 }  
 container{
     display: flex;
@@ -68,6 +70,9 @@ p{
     [class*="divMetade"] {
       width: 100%;
       margin-bottom: 1rem;
+    }
+    input {
+        font-size: 100% !important;
     }
 }
 .regular{
