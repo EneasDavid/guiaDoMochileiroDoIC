@@ -15,12 +15,18 @@ body {
     display:flex;
     flex-direction: column;
     margin: 0;
-    background-color: #3f3939;
+    background-color: #3f3939 !important;
+}
+.dropdown-menu {
+    background-color: #667074 !important;
+    border: none !important;
 }
 ul li a{
-    color: var(--bs-navbar-brand-color);
     text-decoration: none;
     white-space: nowrap;
+}
+nav{
+    background-color:rgb(183 227 239 / 32%);
 }
 main {
     height: 90%;
@@ -42,7 +48,7 @@ footer{
     font-family: sans-serif;
     font-weight: 500;
     TEXT-ALIGN: center;
-    color: #afafaf;
+    color: #7d7171;
     font-size: small;
     flex-shrink: 0 !important;
 }
@@ -52,7 +58,7 @@ input{
     font-weight: 600;
     color: #ffffff;
     font-size: 1.5rem;
-    border-radius: 5px;
+    border-radius: 15px;
     border: none;
     padding: 10px 15px;
     margin-top: 16px;
@@ -68,6 +74,8 @@ input::placeholder {
   }
 .entradaNota{
     display: grid;
+    justify-items: center;
+    align-items: center;
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 10px;
     margin-top: 10px;
@@ -75,14 +83,39 @@ input::placeholder {
 }
 p{
     font-size: 32px;
-    line-height: 1.125;
+    line-height: 1.525;
     font-weight: 600;
     letter-spacing: .004em;
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
-.sublinhado {
-    text-decoration: none;
-    border-bottom: 3px solid #667074;
+p3{
+    font-size: 30px;
+    line-height: clamp(1.125, .525, .125);
+    font-weight: 700;
+    letter-spacing: .004em;
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color:#667074;
+}
+p2, p2 u{
+    font-size: 15px;
+    letter-spacing: clamp(0.004em, 0.004em, 0.004em);    
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #667074;
+    text-align: center;
+}
+.legenda{
+    width: 80%;
+    margin-bottom: 1rem;
+}
+.tituloPagina {
+    display: flex;
+    align-items: flex-start;
+}
+.centralizar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .divMetade{
     width: 45%;
@@ -99,6 +132,9 @@ span{
     input {
         font-size: 100% !important;
     }
+    p2, u{
+        font-size: 2.2vw !important;
+    }
 }
 .regular{
     background-color:rgb(183 227 239 / 32%);
@@ -113,4 +149,11 @@ span{
     display: flex !important;
     transition: 500ms linear;
   }
-  
+  a.link-plain {
+    text-decoration: none;
+    color: inherit;
+}
+a {
+    text-decoration: none;
+    color: #cfcbcb !important; 
+}
