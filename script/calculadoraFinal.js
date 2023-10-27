@@ -12,7 +12,7 @@ function limpar(campo){
 function calcMedia() {
     media=(parseFloat(notaUm.value)+parseFloat(notaDois.value))/2;   
     // Cria uma string HTML com as mensagens da média
-    const mensagemMediaHTML="<span>Sua média regular é: </span><span class='regular'>" + media.toFixed(2) + "</span>";
+    const mensagemMediaHTML="<span class='sublinhado'>Sua média regular é: </span><span class='regular'>" + media.toFixed(2) + "</span>";
     valorMedia.innerHTML=mensagemMediaHTML;
 }
 
@@ -20,7 +20,7 @@ function calculaFinal() {
     const mediaFinal=5.5;
     notaFinalAluno=(mediaFinal-(media*.6))/.4;
     // Cria uma string HTML com as mensagens da nota final
-    const mensagemNotaFinalHTML="<span>Você precisa tirar: </span><span class='alerta'>" + notaFinalAluno.toFixed(2) + "</span>";
+    const mensagemNotaFinalHTML="<span class='sublinhado'>Você precisa tirar: </span><span class='alerta'>" + notaFinalAluno.toFixed(2) + "</span>";
     valorNotaFinal.innerHTML=mensagemNotaFinalHTML;
 }
 
@@ -28,11 +28,11 @@ function executa() {
     limpar(valorNotaFinal);
     // Verificar se os campos de nota estão vazios
     if (notaUm.value.trim() === '' || notaDois.value.trim() === '') {
-        const mensagemMediaHTML="<span><i class='regular'>Insira as duas notas</i> para calcular a média regular!</span>";
+        const mensagemMediaHTML="<span class='sublinhado'><i class='regular'>Insira as duas notas</i> para calcular a média regular!</span>";
         valorMedia.innerHTML = mensagemMediaHTML;
         return; // Sai da função se um ou ambos os campos estiverem vazios
     }else if(parseFloat(notaDois.value)<0||parseFloat(notaDois.value)>10 || parseFloat(notaUm.value)<0||parseFloat(notaUm.value)>10){
-        const mensagemMediaHTML="<span><i class='alerta'>Insira notas válidas</i> para calcular a média regular!</span>";
+        const mensagemMediaHTML="<span class='sublinhado'><i class='alerta'>Insira notas válidas</i> para calcular a média regular!</span>";
         valorMedia.innerHTML=mensagemMediaHTML;
         return;
     }else{
@@ -42,11 +42,11 @@ function executa() {
         if(final) calculaFinal();
         else{
             if(media<5){
-                const mensagemMediaHTML="<span><bold class='alerta'>Infelizmente você não pode fazer a final!</bold></span>";
+                const mensagemMediaHTML="<span class='sublinhado'>Infelizmente você <bold class='alerta'>não pode fazer a final!</bold></span>";
                 valorMedia.innerHTML=mensagemMediaHTML;
             }else{
                 const mensagemMediaHTML="<span>Parabéns, <i class='regular'>você passou!</i></span>";
-                valorNotaFinal.innerHTML=mensagemMediaHTML;
+                valorMedia.innerHTML=mensagemMediaHTML;
             }
         }
     }

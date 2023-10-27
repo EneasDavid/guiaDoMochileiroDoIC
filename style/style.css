@@ -7,17 +7,29 @@
 html, body {
     min-height: 100%;
 }
+html{
+    height: -webkit-fill-available;
+}
 body {
-    height: 100vh;
+    height: inherit;
+    display:flex;
+    flex-direction: column;
     margin: 0;
     background-color: #3f3939;
+}
+ul li a{
+    color: var(--bs-navbar-brand-color);
+    text-decoration: none;
+    white-space: nowrap;
 }
 main {
     height: 90%;
     padding-left: 5px;
     padding-right: 5px;
     display: grid;
-    grid-template-columns: 60px auto 60px; /* Use 1fr para preencher a largura restante */
+    grid-template-columns: 60px 1fr 60px;
+    text-align: justify;
+    line-height: 1.5; 
 }  
 container{
     display: flex;
@@ -26,7 +38,14 @@ container{
     justify-content: space-evenly;
     align-items: center;
 }
-
+footer{
+    font-family: sans-serif;
+    font-weight: 500;
+    TEXT-ALIGN: center;
+    color: #afafaf;
+    font-size: small;
+    flex-shrink: 0 !important;
+}
 /*Caixas de interação com a pagina*/
 input{
     text-align:center;
@@ -61,9 +80,15 @@ p{
     letter-spacing: .004em;
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
+.sublinhado {
+    text-decoration: none;
+    border-bottom: 3px solid #667074;
+}
 .divMetade{
     width: 45%;
-
+}
+span{
+    color: #667074;
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
