@@ -46,7 +46,7 @@ function executa() {
                 valorMedia.innerHTML=mensagemMediaHTML;
             }else{
                 const mensagemMediaHTML="<span>Parabéns, <i class='regular'>você passou!</i></span>";
-                valorMedia.innerHTML=mensagemMediaHTML;
+                valorNotaFinal.innerHTML=mensagemMediaHTML;
             }
         }
     }
