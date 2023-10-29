@@ -17,7 +17,7 @@ ul li a{
     white-space: nowrap;
 }
 nav{
-    background-color:rgb(183 227 239 / 32%);
+    background-color:#667074;
     justify-content: flex-end !important;
     position: absolute !important;
     width: -webkit-fill-available !important;
@@ -34,6 +34,7 @@ main {
     grid-template-columns: 60px 1fr 60px;
     text-align: justify;
     line-height: 1.5; 
+    overflow: hidden;
 }  
 container{
     display: flex;
@@ -48,7 +49,7 @@ input[type="range"] {
     cursor: pointer; /* Mude o cursor ao passar por cima para indicar que é clicável */
 }
 input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: #0056b3; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
+    background-color: #667074; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
 }
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -82,7 +83,7 @@ input[type=range]::-webkit-slider-thumb {
 .slider {
     -webkit-appearance: none;
     height: 10px;
-    background: #667073;
+    background: #667074;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -101,8 +102,9 @@ input[type=range]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: auto;
-    background: #5a5f62;
+    background: #667074;
     border-radius: 50%;
+    cursor: pointer;
 }
 footer{
     font-family: sans-serif;
@@ -117,6 +119,49 @@ footer{
     margin-left: 20px;
     font-weight: 700;
 }
+.gradeCurso{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.divPeriodo{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr)); /* Permite de 1 a 5 elementos, com tamanho mínimo de 20% */
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 110px;
+    border-radius: 32px;
+    margin-bottom: 10px;
+}
+.divPeriodo:only-child {
+    justify-content: center;
+  }
+.impar{
+    text-align: center; /* Ajuste o alinhamento conforme necessário */
+    background-color: #585453;
+}
+.par{
+    text-align: center; /* Ajuste o alinhamento conforme necessário */
+    background-color: #4b494b;
+}
+.materia{
+    background: #666f74;
+    border-radius: 13px;
+    width: 70%;
+    height: 50%;
+}
+.nomeMateria{
+    font-weight: 900;
+    display: grid;
+    height: 100%;
+    align-items: center;
+    color:#cfcbcb !important;
+}
 /*Caixas de interação com a pagina*/
 input{
     text-align:center;
@@ -127,7 +172,7 @@ input{
     border: none;
     padding: 10px 15px;
     margin-top: 16px;
-    background-color:rgb(183 227 239 / 32%);
+    background-color:#667074;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -135,7 +180,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 input::placeholder {
-    color: rgb(207, 203, 203);
+    color: #cfcbcb;
   }
 .entradaNota{
     display: grid;
@@ -203,12 +248,12 @@ span{
     }
 }
 .regular{
-    background-color:rgb(183 227 239 / 32%);
-    color: rgb(207, 203, 203);
+    background-color: #667074;
+    color: #cfcbcb;
 }
 .alerta{
     background-color:rgb(187, 132, 116);
-    color: rgb(207, 203, 203);
+    color: #cfcbcb;
 }
 /*Junto ao back para tornar a experiencia melhor*/
 .aparecer {

@@ -36,9 +36,13 @@ function mostrarResultado(porcentagemFaltas, faltas, limiteFaltas) {
             "<div class='slider-value''>" + limiteFaltas + "</div>" +
         "</div>" +
         "<div class='slider-container'>" +
-            "<input class='_range slider' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas/limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas/limiteFaltas + ", #667074));' disabled>" +
-        "</div>";
-
+            "<input class='_range slider' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas/limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas/limiteFaltas + ", #667074));cursor: initial;' disabled>" +
+        "</div>"+
+        "<div class='' style='text-align: center;'>" +
+        "<span class=''>você </span><span class='regular'>pode faltar " +(limiteFaltas-faltas)+ "</span><span class=''> de "+limiteFaltas+"</span>";
+        "</div>"
+        ;
+        const mensagemMediaHTML=
     valorFalta.innerHTML = mensagemLimiteFaltasHTML;
 }
 
