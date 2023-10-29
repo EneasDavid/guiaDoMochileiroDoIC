@@ -18,7 +18,7 @@ Este código foi desenvolvido como um projeto de férias por Enéas, com o objet
 >2. **Desenvolvimento do UX (Experiência do Usuário)** :heavy_check_mark:
 >   - Criar esboços de layout, fluxos de usuário e componentes de design.
 >   - Projetar a interface do usuário, levando em consideração a facilidade de uso e a usabilidade do sistema.
->   - link https://github.com/EneasDavid/guiaDoMochileiroDoIC/blob/main/style/Guia%do%estudante%do%ic%-42.pdf
+>   - link https://github.com/EneasDavid/guiaDoMochileiroDoIC/blob/main/style/Guia%20do%20estudante%20do%20ic%20-42.pdf
 
 >3. **Front End** :heavy_check_mark:
 >   - Desenvolver a parte frontal do aplicativo, incluindo a implementação da interface do usuário projetada.
