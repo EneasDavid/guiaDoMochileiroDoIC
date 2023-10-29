@@ -19,7 +19,7 @@ function calculaFaltas(tempoAula, faltas) {
     } else if(tempoAula === "0") {
         const mensagemLimiteFaltasHTML = "<span class=''>Você precisa digitar: </span><span class='regular'>carga horária de aula</span><span class=''> da matéria</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
-    }else if(faltas>=limiteFaltas){
+    }else if(faltas>limiteFaltas){
         const mensagemLimiteFaltasHTML = "<span class=''>Infelizmente </span><span class='alerta'>você está reprovado</span><span class=''> por faltas</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
     }else{
