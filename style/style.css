@@ -42,24 +42,55 @@ container{
     justify-content: space-evenly;
     align-items: center;
 }
+/* Estilize o cursor do range (slider) como um retângulo */
+input[type="range"] {
+    -webkit-appearance: none; /* Remova a aparência padrão do slider no Safari */
+    cursor: pointer; /* Mude o cursor ao passar por cima para indicar que é clicável */
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #0056b3; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #b5b0b0;
+    border-radius: 50px;
+    height: 3.2rem;
+    width: 10px;
+}
+._range:focus{
+    outline:none;
+}
 .slider-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.slide-range-outinput{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    width: -webkit-fill-available !important;
+    flex-direction: row;
+    width: 13rem;
+    font-size: medium;
+    justify-content: space-between;
+}
 .slider-label {
     margin-bottom: 10px;
 }
 .slider {
     -webkit-appearance: none;
-    width: 300px;
     height: 10px;
     background: #667073;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    width: 14rem;
+    padding:0 !important;
+    width: -webkit-fill-available !important;
+    height: 3.2rem;
 }
 .slider-value{
     color: #cfcbcb;
@@ -69,7 +100,7 @@ container{
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
-    height: 20px;
+    height: auto;
     background: #cfcbcb;
     border-radius: 50%;
 }
@@ -165,6 +196,7 @@ span{
     }
     input {
         font-size: 100% !important;
+        height: auto !important;
     }
     p2, u{
         font-size: 2.2vw !important;

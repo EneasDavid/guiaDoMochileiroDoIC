@@ -9,6 +9,7 @@ function limpar(campo){
     // Limpa o conteúdo anterior
     campo.innerHTML='';
 }
+
 function calcMedia() {
     media=(parseFloat(notaUm.value)+parseFloat(notaDois.value))/2;   
     // Cria uma string HTML com as mensagens da média
@@ -53,6 +54,7 @@ function executa() {
         }
     }
 }
+
 // Ouvinte de eventos de entrada para cada campo de nota
 notaUm.addEventListener("input", executa);
 notaDois.addEventListener("input", executa);

@@ -37,11 +37,11 @@
         <container></container>
         <container>
             <div class="entradaNota divMetade">              
+              <div class="slider-value" style=" margin-top: 27px; width: -webkit-fill-available; display: flex; flex-direction: row; align-items: center; justify-content: flex-end;">Carga Horaria: <span  class="slider-value" data-cargaHoraria-value></span></div>
+              <input class="_range slider" name="cargaHoraria" type="range" min="0" max="288" value="0" step="72" data-cargaHoraria-input>
               <div class="slider-container">
-                <input class="slider" style="width: 14rem; padding-left:0 !important; padding-right:0 !important" id="myRange" name="cargaHoraria" type="range" min="0" max="100" value="0" data-cargaHoraria-input>
-                <div class="slider-value" cargaHorariaValue>0</div>
-            </div>
-            <input style="width: fit-content;" name="qtnFalta" type="number" step="00" min="0" data-qtnFalta-input placeholder="Quantas vezes você faltou">
+               </div>
+            <input style="width: -webkit-fill-available; height: 3.2rem;" name="qtnFalta" type="number" step="00" min="0" placeholder="Quantas vezes você faltou" data-qtnFalta-input>
             </div>
             <div class="divMetade">
               <div class="centralizar">
@@ -49,9 +49,9 @@
                   <p3 class="tituloPagina">LIMITE DE FALTAS</p3>
                   <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;" title="Média regular tem peso 60%; e a final tem peso 40%, e para pesar você precisa de 5.5"></i>
                   </div>
-                <p2 class="legenda">**Você precisa <u>ter 25% de presença</u> ao longo da disciplina</p2>
+                <p2 class="legenda">**Você precisa <u>ter 75% de presença</u> ao longo da disciplina</p2>
               </div>
-                <p class="mediaRegular" data-valor-mediaRegular></p> 
+                <p class="mediaRegular" data-valor-faltas></p> 
                 <p class="notaFinal" data-valor-notaFinal></p> 
             </div>
         </container>
