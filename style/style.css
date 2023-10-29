@@ -101,7 +101,7 @@ input[type=range]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: auto;
-    background: #cfcbcb;
+    background: #5a5f62;
     border-radius: 50%;
 }
 footer{
