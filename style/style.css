@@ -49,7 +49,7 @@ input[type="range"] {
     cursor: pointer; /* Mude o cursor ao passar por cima para indicar que é clicável */
 }
 input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: #667074; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
+    background-color: #585453; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
 }
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -102,7 +102,7 @@ input[type=range]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: auto;
-    background: #667074;
+    background: #585453;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -255,6 +255,26 @@ span{
     background-color:rgb(187, 132, 116);
     color: #cfcbcb;
 }
+#back-to-top {
+    display: none; /* Inicialmente, o botão estará oculto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #667074; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #back-to-top:hover {
+    background-color: #585453; /* Cor de fundo ao passar o mouse */
+  }
+  
 /*Junto ao back para tornar a experiencia melhor*/
 .aparecer {
     display: flex !important;
