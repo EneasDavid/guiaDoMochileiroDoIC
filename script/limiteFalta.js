@@ -7,19 +7,36 @@ function limpar(campo) {
     campo.innerHTML = '';
 }
 
+/**
+ * Calculates the maximum number of absences allowed based on the total class time and the number of absences.
+ * @param {string} tempoAula - The total class time in hours.
+ * @param {number} faltas - The number of absences.
+ */
 function calculaFaltas(tempoAula, faltas) {
     let aulasQtn = parseFloat(tempoAula) / 0.5;
     let limiteFaltas = aulasQtn * 0.125;
     if(faltas<0){
+        /**
+         * Error message displayed when the number of absences is negative.
+         * @type {string}
+         */
         const mensagemLimiteFaltasHTML = "<span class=''><i class='alerta'>Insira uma quantidade de faltas valida</i> para calcular o limite de faltas!</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
     }
     else if(tempoAula === "0" && faltas === "") {
         limpar(valorFalta);
     } else if(tempoAula === "0") {
+        /**
+         * Error message displayed when the class time is not entered.
+         * @type {string}
+         */
         const mensagemLimiteFaltasHTML = "<span class=''>Você precisa digitar: </span><span class='regular'>carga horária de aula</span><span class=''> da matéria</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
     }else if(faltas>limiteFaltas){
+        /**
+         * Error message displayed when the number of absences exceeds the maximum allowed.
+         * @type {string}
+         */
         const mensagemLimiteFaltasHTML = "<span class=''>Infelizmente </span><span class='alerta'>você está reprovado</span><span class=''> por faltas</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
     }else{
@@ -40,10 +57,9 @@ function mostrarResultado(porcentagemFaltas, faltas, limiteFaltas) {
         "</div>"+
         "<div class='' style='text-align: center;'>" +
         "<span class=''>você </span><span class='regular'>pode faltar " +(limiteFaltas-faltas)+ "</span><span class=''> de "+limiteFaltas+"</span>";
-        "</div>"
-        ;
-        const mensagemMediaHTML=
-    valorFalta.innerHTML = mensagemLimiteFaltasHTML;
+                    "</div>"
+            ;
+        valorFalta.innerHTML = mensagemLimiteFaltasHTML;
 }
 
 function mostraValorCargaHoraria() {
