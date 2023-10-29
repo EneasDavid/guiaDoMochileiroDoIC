@@ -1,5 +1,5 @@
 
-# Códigos da Matéria de Programação 1
+# Guia do mochileiro do IC
 
 Este código foi desenvolvido como um projeto de férias por Enéas, com o objetivo de fornecer cálculos que auxiliam e simplificam a vida dos estudantes do curso de Ciência da Computação, Instituto de Computação da Universidade Federal de Alagoas (IC - UFAL). Ele oferece informações essenciais, como contagem de faltas, cálculo de notas e exibição da grade do curso. Sinta-se à vontade para explorar e utilizar esses códigos como referência ou para aprender mais sobre programação! Se tiver alguma dúvida ou precisar de ajuda, não hesite em perguntar.
 
