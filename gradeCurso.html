@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Limite de faltas</title>
+    <title>Grade de CC</title>
     <link rel="stylesheet" href="style/style.css">
     <!--Link pra importar os icones-->
     <script src="https://kit.fontawesome.com/3985954f39.js" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
             <a class="nav-link" href="faltasCalc.html" style="cursor:pointer">FALTAS</a>
           </li>
             <li class="nav-item">
-              <a class="nav-link active" href="gradeCurso">GRADE DO CURSO</a>
+              <a class="nav-link active" href="gradeCurso.html">GRADE DO CURSO</a>
             </li>
           </ul>       
         </div>
@@ -36,24 +36,13 @@
     <main style="height: max-content;">
         <container></container>
         <container>
-            <div class="entradaNota divMetade">              
-              <div class="slider-value" style=" margin-top: 27px; width: -webkit-fill-available; display: flex; flex-direction: row; align-items: center; justify-content: flex-end;">Carga Horaria: <span  class="slider-value" data-cargaHoraria-value></span></div>
-              <input class="_range slider" name="cargaHoraria" type="range" min="0" max="288" value="0" step="72" data-cargaHoraria-input>
-              <div class="slider-container">
-               </div>
-            <input style="width: -webkit-fill-available; height: 3.2rem;" name="qtnFalta" type="number" step="00" min="0" placeholder="SUAS FALTAS" data-qtnFalta-input>
-            </div>
-            <div class="divMetade">
               <div class="centralizar">
-                <div class="tituloPagina" title="você precisa ter pelo menos 75% ao longo da materia, caso contrario todo o seu coeficiente sera zerado">
-                  <p3 class="tituloPagina">LIMITE DE FALTAS</p3>
-                  <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;"></i>
-                  </div>
-                <p2 class="legenda">**Você precisa <u>ter 75% de presença</u> ao longo da disciplina</p2>
+                <div class="tituloPagina" title="Grade do curso é uma workTree que mostra as cadeiras desse curso, e como elas se relacionam com as materias obrigatorias">
+                  <p3 class="tituloPagina">GRADE DO CURSO</p3>
+                  <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;" ></i>
+                </div>
+                <p2 class="legenda">*grade do curso <u>de ciências da computação</u> tendo duas enfases</p2>
               </div>
-                <p class="mediaRegular" data-valor-faltas></p> 
-                <p class="notaFinal" data-valor-notaFinal></p> 
-            </div>
         </container>
         <container></container>
     </main>
@@ -61,5 +50,4 @@
 <footer>
     Desenvolvido by <strong><a href="https://github.com/EneasDavid">@DF.ENEAS</a></strong>
 </footer>
-<script src="script/limiteFalta.js"></script>
 </html>
