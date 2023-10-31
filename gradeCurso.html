@@ -1,109 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade de CC</title>
-    <link rel="stylesheet" href="style/style.css">
-    <!--Link pra importar os icones-->
-    <script src="https://kit.fontawesome.com/3985954f39.js" crossorigin="anonymous"></script>
-    <!--Importar o bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grade de CC</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/3985954f39.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <nav class="navbar navbar navbar-expand-lg ">
-        <a class="navbar-brand logo" href="index.html">CALCULADORA FINAL</a>
-         <!--SÓ APARECE NO CELULAR-->
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--SÓ APARECE NO CELULAR-->
-        <!--LINKS-->
-        <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="float: right;">
-          <li class="nav-item">
-            <a class="nav-link" href="faltasCalc.html" style="cursor:pointer">FALTAS</a>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="gradeCurso.html">GRADE DO CURSO</a>
-            </li>
-          </ul>       
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand logo" href="index.html">CALCULADORA FINAL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="float: right;">
+        <li class="nav-item">
+          <a class="nav-link" href="faltasCalc.html" style="cursor:pointer">FALTAS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="gradeCurso.html">GRADE DO CURSO</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main style="margin-top: 5rem;">
+    <container></container>
+    <container class="gradeCurso">
+      <div class="centralizar" style="margin: 10px;">
+        <div class="tituloPagina"
+          title="Grade do curso é uma workTree que mostra as cadeiras desse curso, e como elas se relacionam com as matérias obrigatórias">
+          <p3 class="tituloPagina">GRADE DO CURSO</p3>
+          <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;"></i>
         </div>
-    </nav>
-    <main style="height: max-content;margin-top: 5rem;">
-        <container></container>
-        <container class="gradeCurso">
-              <div class="centralizar" style="MARGIN: 10PX;">
-                <div class="tituloPagina" title="Grade do curso é uma workTree que mostra as cadeiras desse curso, e como elas se relacionam com as materias obrigatorias">
-                  <p3 class="tituloPagina">GRADE DO CURSO</p3>
-                  <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;" ></i>
-                </div>
-                <p2 class="legenda">*grade do curso <u>de ciências da computação</u> tendo duas enfases</p2>
-              </div>
-              <div class="impar divPeriodo">
-                <div class="materia"><span class="nomeMateria">P1</span></div>
-                <div class="materia"><span class="nomeMateria">MD</span></div>
-                <div class="materia"><span class="nomeMateria">CDI</span></div>
-                <div class="materia"><span class="nomeMateria">LAC</span></div>
-                <div class="materia"><span class="nomeMateria">CSE</span></div>
-              </div>
-              
-              <div class="par divPeriodo">
-                <div class="materia"><span class="nomeMateria">ED</span></div>
-                <div class="materia"><span class="nomeMateria">BD</span></div>
-                <div class="materia"><span class="nomeMateria">OAC</span></div>
-                <div class="materia"><span class="nomeMateria">GA</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
-              <div class="impar divPeriodo">
-                <div class="materia"><span class="nomeMateria">P1</span></div>
-                <div class="materia"><span class="nomeMateria">P1</span></div>
-                <div class="materia"><span class="nomeMateria">P1</span></div>
-                <div class="materia"><span class="nomeMateria">P1</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
-              
-              <div class="par divPeriodo">
-                <div class="materia"><span class="nomeMateria">TG</span></div>
-                <div class="materia"><span class="nomeMateria">RC</span></div>
-                <div class="materia"><span class="nomeMateria">PE</span></div>
-                <div class="materia"><span class="nomeMateria">AL</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
+        <p2 class="legenda">*grade do curso <u>de ciências da computação</u> tendo duas ênfases</p2>
+      </div>
+      <div class="impar divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="A">P1</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="B">MD</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="C">CDI</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="D">LAC</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="E">CSE</span></div>
+      </div>
 
-              <div class="impar divPeriodo">
-                <div class="materia"><span class="nomeMateria">P2</span></div>
-                <div class="materia"><span class="nomeMateria">P3</span></div>
-                <div class="materia"><span class="nomeMateria">PAA</span></div>
-                <div class="materia"><span class="nomeMateria">TC</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
-              
-              <div class="par divPeriodo">
-                <div class="materia"><span class="nomeMateria">PDS</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
+      <div class="par divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="F">ED</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="G">BD</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="H">OAC</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="I">GA</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="J">ELETIVA</span></div>
+      </div>
+      <div class="impar divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="K">P1</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="L">P1</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="M">P1</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="N">P1</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="O">ELETIVA</span></div>
+      </div>
 
-              <div class="impar divPeriodo">
-                <div class="materia"><span class="nomeMateria">MPTI</span></div>
-                <div class="materia"><span class="nomeMateria">ND</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-                <div class="materia"><span class="nomeMateria">ELETIVA</span></div>
-              </div>
-              
-              <div class="par divPeriodo">
-                <div class="materia"><span class="nomeMateria">TCC</span></div>
-              </div>
-        </container>
-        <container><a href="#" id="back-to-top" title="Voltar ao Topo"><i class="fa-solid fa-circle-up fa-beat"></i></a></container>
-    </main>
+      <div class="par divPeriodo">
+        <div class="materia circle"><span class="nomeMateria" data-circle="P">TG</span></div>
+        <div class="materia circle"><span class="nomeMateria" data-circle="Q">RC</span></div>
+        <div class="materia circle"><span class="nomeMateria" data-circle="R">PE</span></div>
+        <div class="materia circle"><span class="nomeMateria" data-circle="S">AL</span></div>
+        <div class="materia circle" data-circle="T"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+      </div>
+
+      <div class="impar divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="U">P2</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="V">P3</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">PAA</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">TC</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+      </div>
+
+      <div class="par divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="T">PDS</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+      </div>
+
+      <div class="impar divPeriodo">
+        <div class="materia"><span class="nomeMateria" data-circle="T">MPTI</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ND</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+        <div class="materia"><span class="nomeMateria" data-circle="T">ELETIVA</span></div>
+      </div>
+
+      <div class="par divPeriodo">
+        <div class="materia"><span class="nomeMateria">TCC</span></div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+    </container>
+    <container>
+      <a href="#" id="back-to-top" title="Voltar ao Topo">
+        <i class="fa-solid fa-circle-up fa-beat"></i>
+      </a>
+    </container>
+  </main>
 </body>
 <footer>
-    Desenvolvido by <strong><a href="https://github.com/EneasDavid">@DF.ENEAS</a></strong>
+  Desenvolvido por <strong><a href="https://github.com/EneasDavid">@DF.ENEAS</a></strong>
 </footer>
 <script src="script/putInTop.js"></script>
+<script src="script/relacoesGradeCurso.js"></script>
+
 </html>

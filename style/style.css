@@ -1,30 +1,36 @@
-html{
+html {
     height: -webkit-fill-available;
 }
-body{
+
+body {
     height: inherit;
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin: 0px;
     background-color: #3f3939 !important;
 }
+
 .dropdown-menu {
     background-color: #667074 !important;
     border: none;
 }
-ul li a{
+
+ul li a {
     text-decoration: none;
     white-space: nowrap;
 }
-nav{
-    background-color:#667074;
+
+nav {
+    background-color: #667074;
     justify-content: flex-end !important;
     position: absolute !important;
     width: -webkit-fill-available !important;
 }
-.collapse{
+
+.collapse {
     margin-right: 10px;
 }
+
 main {
     width: auto !important;
     flex: 1 0 auto;
@@ -33,24 +39,31 @@ main {
     display: grid;
     grid-template-columns: 60px 1fr 60px;
     text-align: justify;
-    line-height: 1.5; 
+    line-height: 1.5;
     overflow: hidden;
-}  
-container{
+}
+
+container {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
 }
+
 /* Estilize o cursor do range (slider) como um retângulo */
 input[type="range"] {
-    -webkit-appearance: none; /* Remova a aparência padrão do slider no Safari */
-    cursor: pointer; /* Mude o cursor ao passar por cima para indicar que é clicável */
+    -webkit-appearance: none;
+    /* Remova a aparência padrão do slider no Safari */
+    cursor: pointer;
+    /* Mude o cursor ao passar por cima para indicar que é clicável */
 }
+
 input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: #585453; /* Cor de preenchimento quando a "bolinha" está sob o cursor */
+    background-color: #585453;
+    /* Cor de preenchimento quando a "bolinha" está sob o cursor */
 }
+
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #b5b0b0;
@@ -58,15 +71,18 @@ input[type=range]::-webkit-slider-thumb {
     height: 3.2rem;
     width: 10px;
 }
-._range:focus{
-    outline:none;
+
+._range:focus {
+    outline: none;
 }
+
 .slider-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.slide-range-outinput{
+
+.slide-range-outinput {
     display: flex;
     margin-left: 10px;
     margin-right: 10px;
@@ -77,9 +93,11 @@ input[type=range]::-webkit-slider-thumb {
     font-size: medium;
     justify-content: space-between;
 }
+
 .slider-label {
     margin-bottom: 10px;
 }
+
 .slider {
     -webkit-appearance: none;
     height: 10px;
@@ -89,14 +107,16 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-transition: .2s;
     transition: opacity .2s;
     width: 14rem;
-    padding:0 !important;
+    padding: 0 !important;
     width: -webkit-fill-available !important;
     height: 3.2rem;
 }
-.slider-value{
+
+.slider-value {
     color: #cfcbcb;
     font-weight: 600;
 }
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -106,7 +126,8 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     cursor: pointer;
 }
-footer{
+
+footer {
     font-family: sans-serif;
     font-weight: 500;
     TEXT-ALIGN: center;
@@ -114,12 +135,14 @@ footer{
     font-size: small;
     flex-shrink: 0 !important;
 }
-.logo{
+
+.logo {
     margin-right: 40px !important;
     margin-left: 20px;
     font-weight: 700;
 }
-.gradeCurso{
+
+.gradeCurso {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -127,9 +150,10 @@ footer{
     justify-content: space-around;
 }
 
-.divPeriodo{
+.divPeriodo {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr)); /* Permite de 1 a 5 elementos, com tamanho mínimo de 20% */
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
+    /* Permite de 1 a 5 elementos, com tamanho mínimo de 20% */
     grid-gap: 10px;
     align-items: center;
     justify-items: center;
@@ -138,33 +162,41 @@ footer{
     border-radius: 32px;
     margin-bottom: 10px;
 }
+
 .divPeriodo:only-child {
     justify-content: center;
-  }
-.impar{
-    text-align: center; /* Ajuste o alinhamento conforme necessário */
+}
+
+.impar {
+    text-align: center;
+    /* Ajuste o alinhamento conforme necessário */
     background-color: #585453;
 }
-.par{
-    text-align: center; /* Ajuste o alinhamento conforme necessário */
+
+.par {
+    text-align: center;
+    /* Ajuste o alinhamento conforme necessário */
     background-color: #4b494b;
 }
-.materia{
+
+.materia {
     background: #666f74;
     border-radius: 13px;
     width: 70%;
     height: 50%;
 }
-.nomeMateria{
+
+.nomeMateria {
     font-weight: 900;
     display: grid;
     height: 100%;
     align-items: center;
-    color:#cfcbcb !important;
+    color: #cfcbcb !important;
 }
+
 /*Caixas de interação com a pagina*/
-input{
-    text-align:center;
+input {
+    text-align: center;
     font-weight: 600;
     color: #ffffff;
     font-size: 1.5rem;
@@ -172,17 +204,20 @@ input{
     border: none;
     padding: 10px 15px;
     margin-top: 16px;
-    background-color:#667074;
+    background-color: #667074;
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input::placeholder {
     color: #cfcbcb;
-  }
-.entradaNota{
+}
+
+.entradaNota {
     display: grid;
     justify-items: center;
     align-items: center;
@@ -191,77 +226,97 @@ input::placeholder {
     margin-top: 10px;
     margin-right: 0.8rem;
 }
-p{
+
+p {
     font-size: 32px;
     line-height: 1.525;
     font-weight: 600;
     letter-spacing: .004em;
-    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-p3{
+
+p3 {
     font-size: 30px;
     line-height: clamp(1.125, .525, .125);
     font-weight: 700;
     letter-spacing: .004em;
-    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-    color:#667074;
+    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #667074;
 }
-p2, p2 u{
+
+p2,
+p2 u {
     font-size: 15px;
-    letter-spacing: clamp(0.004em, 0.004em, 0.004em);    
-    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    letter-spacing: clamp(0.004em, 0.004em, 0.004em);
+    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #667074;
     text-align: center;
 }
-.legenda{
+
+.legenda {
     width: 80%;
     margin-bottom: 1rem;
 }
+
 .tituloPagina {
     display: flex;
     align-items: flex-start;
 }
-.centralizar{
+
+.centralizar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.divMetade{
+
+.divMetade {
     width: 45%;
 }
-span{
+
+span {
     color: #667074;
 }
+
 @media only screen and (max-width: 768px) {
+
     /* For mobile phones: */
     [class*="divMetade"] {
-      width: 100%;
-      margin-bottom: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
     }
+
     input {
         font-size: 100% !important;
         height: auto !important;
     }
-    p2, u{
+
+    p2,
+    u {
         font-size: 2.2vw !important;
     }
 }
-.regular{
+
+.regular {
     background-color: #667074;
     color: #cfcbcb;
 }
-.alerta{
-    background-color:rgb(187, 132, 116);
+
+.alerta {
+    background-color: rgb(187, 132, 116);
     color: #cfcbcb;
 }
+
 #back-to-top {
-    display: none; /* Inicialmente, o botão estará oculto */
+    display: none;
+    /* Inicialmente, o botão estará oculto */
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #667074; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto */
+    background-color: #667074;
+    /* Cor de fundo do botão */
+    color: #fff;
+    /* Cor do texto */
     width: 40px;
     height: 40px;
     text-align: center;
@@ -269,22 +324,25 @@ span{
     line-height: 40px;
     border-radius: 50%;
     cursor: pointer;
-  }
-  
-  #back-to-top:hover {
-    background-color: #585453; /* Cor de fundo ao passar o mouse */
-  }
-  
+}
+
+#back-to-top:hover {
+    background-color: #585453;
+    /* Cor de fundo ao passar o mouse */
+}
+
 /*Junto ao back para tornar a experiencia melhor*/
 .aparecer {
     display: flex !important;
     transition: 500ms linear;
-  }
-  a.link-plain {
+}
+
+a.link-plain {
     text-decoration: none;
     color: inherit;
 }
+
 a {
     text-decoration: none;
-    color: #cfcbcb !important; 
+    color: #cfcbcb !important;
 }
