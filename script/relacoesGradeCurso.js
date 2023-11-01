@@ -10,12 +10,12 @@ const relations = {
     MD: ["TG"],
     //SEGUNDA PERIODO
     ED: ["P1", "TG", "P1", "P2", "PAA","IA","COMPILADORES"],
-    BD: [],
+    BD: ["P2","P3"],
     GA: ["AL"],
     OAC: ["SO"],
     //TERCEIRO PERIODO
     TG: ["ED"],
-    RC: ["P1", "P2"],
+    RC: ["P1", "P2","P3"],
     PE: ["CDI"],
     AL: ["GA"],
     //QUARTO PERIODO
