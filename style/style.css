@@ -154,11 +154,12 @@ footer {
     /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));*/
     /* Permite de 1 a 5 elementos, com tamanho mínimo de 20% */
-    grid-gap: 10px;
+    /*grid-gap: 10px;*/
 
     display: flex;
     align-items: center;
     justify-items: center;
+    text-align: center;
     width: 100%;
     height: 110px;
     border-radius: 32px;
@@ -184,11 +185,17 @@ footer {
 
 .materia {
     flex: 1; /* Faz com que todas as matérias tenham o mesmo tamanho */
-    margin: 0 15px; /* Adiciona o espaçamento horizontal entre as matérias */
+    margin: 0px 5px; /* Adiciona o espaçamento horizontal entre as matérias */
+    
+    max-width: 80%;
     background: #666f74;
     border-radius: 13px;
     height: 50%;
 }  
+
+.materia.center {
+    margin: 0 auto;
+}
 
 .nomeMateria {
     font-weight: 900;
