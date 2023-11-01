@@ -3,7 +3,7 @@ const overlay = document.getElementById("overlay");
 
 const relations = {
     //PRIMEIRO PERIODO
-    P1: ["ED"],
+    P1: ["ED", "RC"],
     LAC: ["IA"],
     CDI: ["PE"],
     SCE: [],
