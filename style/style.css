@@ -183,13 +183,12 @@ footer {
 }
 
 .materia {
-    flex: 1 1 60%;
-    margin: 0 15px;
+    flex: 1; /* Faz com que todas as matérias tenham o mesmo tamanho */
+    margin: 0 15px; /* Adiciona o espaçamento horizontal entre as matérias */
     background: #666f74;
     border-radius: 13px;
-    /*width: 5vw;*/
     height: 50%;
-}
+}  
 
 .nomeMateria {
     font-weight: 900;
@@ -311,6 +310,13 @@ span {
     p2,
     u {
         font-size: 2.2vw !important;
+    }
+    main{
+        grid-template-columns: 1fr !important;
+        align-items: flex-start !important;;
+    }
+    .divPeriodo{
+        width: 360px !important
     }
 }
 
