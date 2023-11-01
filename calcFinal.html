@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Limite de faltas</title>
+  <title>Calculo Final</title>
   <link rel="stylesheet" href="style/style.css">
   <!--Link pra importar os icones-->
   <script src="https://kit.fontawesome.com/3985954f39.js" crossorigin="anonymous"></script>
@@ -38,26 +38,22 @@
     <container></container>
     <container>
       <div class="entradaNota divMetade">
-        <div class="slider-value"
-          style=" margin-top: 27px; width: -webkit-fill-available; display: flex; flex-direction: row; align-items: center; justify-content: flex-end;">
-          Carga Horaria: <span class="slider-value" data-cargaHoraria-value></span></div>
-        <input class="_range slider" name="cargaHoraria" type="range" min="0" max="288" value="0" step="72"
-          data-cargaHoraria-input>
-        <div class="slider-container">
-        </div>
-        <input style="width: -webkit-fill-available; height: 3.2rem;" name="qtnFalta" type="number" step="00" min="0"
-          placeholder="SUAS FALTAS" data-qtnFalta-input>
+        <input style="width: -webkit-fill-available; height: 3.2rem;" name="notaUm" type="number" step="0.01" min="0"
+          size="10" data-notaUm-input placeholder="NOTA 1ºAB">
+        <input style="width: -webkit-fill-available; height: 3.2rem;" name="notaDois" type="number" step="0.01" min="0"
+          size="10" data-notaDois-input placeholder="NOTA 2ºAB">
       </div>
+
       <div class="divMetade">
         <div class="centralizar">
           <div class="tituloPagina"
-            title="você precisa ter pelo menos 75% ao longo da materia, caso contrario todo o seu coeficiente sera zerado">
-            <p3 class="tituloPagina">LIMITE DE FALTAS</p3>
+            title="Média regular tem peso 60%; e a final tem peso 40%, e para pesar você precisa de 5.5">
+            <p3 class="tituloPagina">NOTAS</p3>
             <i class="fa-solid fa-circle-question fa-2xs" style="color: #667774;"></i>
           </div>
-          <p2 class="legenda">**Você precisa <u>ter 75% de presença</u> ao longo da disciplina</p2>
+          <p2 class="legenda">*Só é permitido realizar a final pessoas que têm média regular <u>maior igual a 5</u></p2>
         </div>
-        <p class="mediaRegular" data-valor-faltas></p>
+        <p class="mediaRegular" data-valor-mediaRegular></p>
         <p class="notaFinal" data-valor-notaFinal></p>
       </div>
     </container>
@@ -67,6 +63,6 @@
 <footer>
   Desenvolvido by <strong><a href="https://github.com/EneasDavid">@DF.ENEAS</a></strong>
 </footer>
-<script src="script/limiteFalta.js"></script>
+<script src="script/calculadoraFinal.js"></script>
 
 </html>
