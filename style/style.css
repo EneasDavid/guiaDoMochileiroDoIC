@@ -258,6 +258,18 @@ p2 u {
     margin-bottom: 1rem;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.highlight {
+    z-index: 1;
+}
 .tituloPagina {
     display: flex;
     align-items: flex-start;

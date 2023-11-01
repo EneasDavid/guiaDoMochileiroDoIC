@@ -1,36 +1,50 @@
-const circles = document.querySelectorAll(".circle");
+const divMateria = document.querySelectorAll(".materia");
 const overlay = document.getElementById("overlay");
 
 const relations = {
-    A: ["F"],
-    B: [],
-    C: [],
-    D: [],
-    E: [],
-    F: ["A", "L", "M", "P", "S"],
-    G: [],
-    H: [],
-    I: ["M", "S"],
-    J: [],
-    K: [],
-    L: [],
-    M: [],
-    N: [],
-    O: [],
-    P: [],
-    Q: [],
-    R: [],
-    S: [],
-    T: [],
+    //PRIMEIRO PERIODO
+    P1: ["ED"],
+    LAC: ["IA"],
+    CDI: ["PE"],
+    SCE: [],
+    MD: ["TG"],
+    //SEGUNDA PERIODO
+    ED: ["P1", "TG", "P1", "P2", "PAA","IA","COMPILADORES"],
+    BD: [],
+    GA: ["AL"],
+    OAC: ["SO"],
+    //TERCEIRO PERIODO
+    TG: ["ED"],
+    RC: ["P1", "P2"],
+    PE: ["CDI"],
+    AL: ["GA"],
+    //QUARTO PERIODO
+    P2: ["ED", "RC", "BD"],
+    P3: ["ED", "RC", "BD"],
+    PAA: ["ED", "TG"],
+    TC: ["COMPILADORES"],
+    //QUINTO PERIODO
+    COMPILADORES: ["ED", "TC"],
+    IA: ["LAC", "ED"],
+    SO: ["OAC"],
+    CG: [],
+    //SEXTO PERIODO
+    PDS: ["P1", "LAC", "CDI", "SCE", "MD", "ED", "BD", "GA", "OAC", "TG", "RC", "PE", "AL", "P2", "P3", "PAA", "TC", "COMPILADORES", "IA", "SO", "CG"],
+    //SETIMO PERIODO
+    MPTI: [],
+    ND: [],
+    //OITAVO PERIODO
+    TCC: [],
+    ELETIVA: [],
 };
 
 let isOverlayVisible = false;
 
-const highlightCircles = (circleName) => {
-    const relatedCircles = relations[circleName];
-    relatedCircles.push(circleName); // Adicione o próprio circleName à lista de relacionados
-    circles.forEach((circle) => {
-        const currentCircle = circle.getAttribute("data-circle");
+const highlightCircles = (divMateriaExpecifica) => {
+    const relatedCircles = relations[divMateriaExpecifica];
+    relatedCircles.push(divMateriaExpecifica); // Adicione o próprio divMateriaExpecifica à lista de relacionados
+    divMateria.forEach((circle) => {
+        const currentCircle = circle.getAttribute("data-div-materia"); // Correção aqui
         if (relatedCircles.includes(currentCircle)) {
             circle.classList.add("highlight");
         } else {
@@ -40,12 +54,12 @@ const highlightCircles = (circleName) => {
 };
 
 const removeHighlights = () => {
-    circles.forEach((circle) => circle.classList.remove("highlight"));
+    divMateria.forEach((circle) => circle.classList.remove("highlight"));
 };
 
-circles.forEach((circle) => {
+divMateria.forEach((circle) => {
     circle.addEventListener("click", () => {
-        const circleName = circle.getAttribute("data-circle");
+        const circleName = circle.getAttribute("data-div-materia"); // Correção aqui
         if (relations[circleName] && relations[circleName].length > 0) {
             if (isOverlayVisible) {
                 overlay.style.display = "none";
