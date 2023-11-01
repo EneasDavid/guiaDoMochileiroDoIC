@@ -151,10 +151,12 @@ footer {
 }
 
 .divPeriodo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
+    /*display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));*/
     /* Permite de 1 a 5 elementos, com tamanho mínimo de 20% */
     grid-gap: 10px;
+
+    display: flex;
     align-items: center;
     justify-items: center;
     width: 100%;
@@ -162,6 +164,7 @@ footer {
     border-radius: 32px;
     margin-bottom: 10px;
 }
+
 
 .divPeriodo:only-child {
     justify-content: center;
@@ -180,9 +183,11 @@ footer {
 }
 
 .materia {
+    flex: 1 1 60%;
+    margin: 0 15px;
     background: #666f74;
     border-radius: 13px;
-    width: 70%;
+    /*width: 5vw;*/
     height: 50%;
 }
 
