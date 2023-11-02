@@ -240,6 +240,11 @@ eletiva.forEach((elemento) => {
     const valorAtual = elemento.getAttribute("data-eletiva-relacoes");
     // Obtém a fila existente para o elemento ou cria uma nova
     let fila = eletivasArmazena.get(elemento) || [];
+    // Verifique se o novo valor já está na fila
+    if (fila.includes(valorAtual)) {
+      // Se já estiver na fila, apenas ignore o clique
+      return;
+    }
     // Verifique se já existem duas divs selecionadas
     if (eletivasArmazena.size >= 2) {
       // Remove a classe "selecionado" da div mais antiga

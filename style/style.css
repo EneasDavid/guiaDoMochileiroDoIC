@@ -220,14 +220,33 @@ footer {
 .materia.center {
     margin: 0 auto;
 }
-.divEnfases{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: inherit;
+.carrossel {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
 }
-.divEnfases:hover{
+  
+.divEnfases {
+    display: flex;
+    flex-wrap: nowrap;
+}
+  
+.enfaseSeletor {
+    margin: 10px;
+    background: #3f3939;
+    border: 1px solid #666f74;
+    border-radius: 30px;
+    padding: 10px;
+    color: #666f74;
+    text-align: center;
+    font-weight: 700;
+    user-select: none;
+    min-width: 150px; /* Largura mínima de cada item */
+    flex: 0 0 auto;
+  }
+
+  .divEnfases:hover{
     cursor: pointer;
 }
 .enfaseSeletor:hover{
@@ -237,20 +256,6 @@ footer {
 .selecionado{
     background: #666f74 !important;
     color: #cfcbcb !important;
-}
-.enfaseSeletor {
-    margin: 10px;
-    background: #3f3939;
-    border: 1px solid #666f74;
-    border-radius: 30px;
-    width: inherit;
-    padding-right: 10px;
-    padding-left: 10px;
-    color: #666f74;
-    text-align: center;
-    font-weight: 700;
-    user-select: none;
-
 }
   
 .nomeMateria {
@@ -394,7 +399,11 @@ span {
        font-size: 2.5VW !important;
     }
     .enfaseSeletor{
-        font-size: 36% !important;
+        font-size: 9px !important;
+    }
+    .carrossel{
+        height: 63px;
+
     }
 }
 #overlay {
