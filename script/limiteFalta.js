@@ -48,17 +48,17 @@ function calculaFaltas(tempoAula, faltas) {
 
 function mostrarResultado(porcentagemFaltas, faltas, limiteFaltas) {
     const mensagemLimiteFaltasHTML =
-        "<div class='slide-range-outinput'>" +
-        "<div class='slider-value''>" + porcentagemFaltas.toFixed(2) + "%</div>" +
-        "<div class='slider-value''>" + limiteFaltas + "</div>" +
-        "</div>" +
-        "<div class='slider-container'>" +
-        "<input class='_range slider pontoFaltas' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas / limiteFaltas + ", #667074));cursor: initial !important;' disabled>" +
-        "</div>" +
-        "<div class='' style='text-align: center;'>" +
-        "<span class=''>você </span><span class='regular'>pode faltar " + (limiteFaltas - faltas) + "</span><span class=''> de " + limiteFaltas + "</span>";
-    "</div>"
-        ;
+    "<div class='slide-range-outinput'>" +
+    "<div class='slider-value'>" + porcentagemFaltas.toFixed(2) + "%</div>" +
+    "<div class='slider-value'>" + limiteFaltas + "</div>" +
+    "</div>" +
+    "<div class='slider-container'>" +
+    "<input class='_range slider pontoFaltas no-thumb' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas / limiteFaltas + ", #667074)); cursor: initial !important;' disabled>" +
+    "</div>" +
+    "<div class='' style='text-align: center;'>" +
+    "<span class=''>você </span><span class='regular'>pode faltar " + (limiteFaltas - faltas) + "</span><span class=''> de " + limiteFaltas + "</span>" +
+    "</div>";
+
     valorFalta.innerHTML = mensagemLimiteFaltasHTML;
 }
 
