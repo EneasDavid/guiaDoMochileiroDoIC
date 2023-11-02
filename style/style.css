@@ -220,7 +220,39 @@ footer {
 .materia.center {
     margin: 0 auto;
 }
+.divEnfases{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: inherit;
+}
+.divEnfases:hover{
+    cursor: pointer;
+}
+.enfaseSeletor:hover{
+    background: #666f74;
+    color: #cfcbcb;
+}
+.selecionado{
+    background: #666f74 !important;
+    color: #cfcbcb !important;
+}
+.enfaseSeletor {
+    margin: 10px;
+    background: #3f3939;
+    border: 1px solid #666f74;
+    border-radius: 30px;
+    width: inherit;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #666f74;
+    text-align: center;
+    font-weight: 700;
+    user-select: none;
 
+}
+  
 .nomeMateria {
     font-weight: 900;
     display: grid;
@@ -228,6 +260,8 @@ footer {
     align-items: center;
     color: #cfcbcb !important;
     OVERFLOW: hidden;
+    user-select: none;
+    cursor: default;
 }
 .nomePeriodo{
     font-weight: 900;
@@ -294,9 +328,10 @@ p2 u {
     text-align: center;
 }
 
-.legenda {
+.legenda, .legenda u {
     width: 80%;
     margin-bottom: 1rem;
+    color: #c8c8c8 !important;
 }
 
 .overlay {
@@ -357,6 +392,9 @@ span {
     }
     .nomeMateriaLager{
        font-size: 2.5VW !important;
+    }
+    .enfaseSeletor{
+        font-size: 36% !important;
     }
 }
 #overlay {
