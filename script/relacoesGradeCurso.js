@@ -238,20 +238,14 @@ const eletivasArmazena = new Map();
 eletiva.forEach((elemento) => {
   elemento.addEventListener("click", () => {
     const valorAtual = elemento.getAttribute("data-eletiva-relacoes");
-    // Obtém a fila existente para o elemento ou cria uma nova
     let fila = eletivasArmazena.get(elemento) || [];
-    // Verifique se o novo valor já está na fila
     if (fila.includes(valorAtual)) {
-      // Se já estiver na fila, apenas ignore o clique
       return;
     }
-    // Verifique se já existem duas divs selecionadas
     if (eletivasArmazena.size >= 2) {
-      // Remove a classe "selecionado" da div mais antiga
       const divMaisAntiga = eletivasArmazena.entries().next().value[0];
       divMaisAntiga.classList.remove("selecionado");
 
-      // Remove o primeiro item do array
       const primeiroItem = eletivasArmazena.get(divMaisAntiga);
       primeiroItem.shift();
       if (primeiroItem.length === 0) {
@@ -259,11 +253,8 @@ eletiva.forEach((elemento) => {
       }
     }
     console.log(eletivasArmazena.size);
-    // Adicione o novo valor à fila
     fila.push(valorAtual);
-    // Atualize a fila no objeto Map
     eletivasArmazena.set(elemento, fila);
-    // Adicione a classe "selecionado" à div clicada
     elemento.classList.add("selecionado");
     for (const fila of eletivasArmazena.values()) {
       console.log(fila);

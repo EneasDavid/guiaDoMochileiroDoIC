@@ -212,7 +212,7 @@ footer {
     max-width: 9rem;
     background: #666f74;
     border-radius: 13px;
-    height: 80%;
+    height: 68%;
     overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo excede a altura da div */
 
 }  

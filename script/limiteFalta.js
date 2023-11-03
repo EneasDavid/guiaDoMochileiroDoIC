@@ -30,7 +30,7 @@ function calculaFaltas(tempoAula, faltas) {
          * Error message displayed when the class time is not entered.
          * @type {string}
          */
-        const mensagemLimiteFaltasHTML = "<span class=''>Você precisa digitar: </span><span class='regular'>carga horária de aula</span><span class=''> da matéria</span>";
+        const mensagemLimiteFaltasHTML = "<span class=''>Você precisa digitar a </span><span class='regular'>carga horária</span><span class=''> da matéria</span>";
         valorFalta.innerHTML = mensagemLimiteFaltasHTML;
     } else if (faltas > limiteFaltas) {
         /**
