@@ -1,67 +1,102 @@
+/**
+ * Este script serve para calcular o porcentagem de faltas em uma disciplina e mostrar o resultano na pagina
+ * @summary Script para calcular o limite de faltas.
+ * @since 1.0.0
+ * @file Este script está localizado em /d:/guiaDoMochileiroDoIC/script/limiteFaltas.js
+ */
+/**
+ * O elementos de entradas para as variaveis.
+ * @type {HTMLElement}
+ */
 const cargaHorariaSlider = document.querySelector("[data-cargaHoraria-input]");
 const cargaHorariaValorOutput = document.querySelector("[data-cargaHoraria-value]");
 const faltasCargaHoraria = document.querySelector("[data-qtnFalta-input]");
 const valorFalta = document.querySelector("[data-valor-faltas]");
 
+/**
+ * As mensagens exibidas ao usuário em diferentes cenários.
+ * @type {Object}
+ */
+const mensagens = {
+    limpaCampo: '',
+    entradaInvalida: "<span class=''><i class='alerta'>Insira uma quantidade de faltas válida</i> para calcular o limite de faltas!</span>",
+    cargaHorariaNaoDigitada: "<span class=''>Você precisa digitar a </span><span class='regular'>carga horária</span><span class=''> da matéria</span>",
+    reprovadoPorFaltas: "<span class=''>Infelizmente </span><span class='alerta'>você está reprovado</span><span class=''> por faltas</span>"
+};
+
+/**
+ * Limpa o conteúdo de um elemento HTML.
+ * @param {HTMLElement} campo - O elemento HTML a ser limpo.
+ * @returns {void}
+ */
 function limpar(campo) {
-    campo.innerHTML = '';
+    campo.innerHTML = mensagens.limpaCampo;
 }
 
 /**
- * Calculates the maximum number of absences allowed based on the total class time and the number of absences.
- * @param {string} tempoAula - The total class time in hours.
- * @param {number} faltas - The number of absences.
+ * Calcula a porcentagem de faltas e exibe o resultado na página.
+ * @param {string} tempoAula - O tempo total de aula em horas.
+ * @param {string} faltas - O número de faltas.
+ * @returns {void}
  */
 function calculaFaltas(tempoAula, faltas) {
     let aulasQtn = parseFloat(tempoAula) / 0.5;
     let limiteFaltas = aulasQtn * 0.125;
+
     if (faltas < 0) {
         /**
-         * Error message displayed when the number of absences is negative.
+         * Mensagem de erro exibida quando o número de faltas é negativo.
          * @type {string}
          */
-        const mensagemLimiteFaltasHTML = "<span class=''><i class='alerta'>Insira uma quantidade de faltas valida</i> para calcular o limite de faltas!</span>";
-        valorFalta.innerHTML = mensagemLimiteFaltasHTML;
-    }
-    else if (tempoAula === "0" && faltas === "") {
+        valorFalta.innerHTML = mensagens.entradaInvalida;
+    } else if (tempoAula === "0" && faltas === "") {
         limpar(valorFalta);
     } else if (tempoAula === "0") {
         /**
-         * Error message displayed when the class time is not entered.
-         * @type {string}
-         */
-        const mensagemLimiteFaltasHTML = "<span class=''>Você precisa digitar a </span><span class='regular'>carga horária</span><span class=''> da matéria</span>";
-        valorFalta.innerHTML = mensagemLimiteFaltasHTML;
+        * Mensagem de erro exibida quando a carga horaria não for digitada.
+        * @type {string}
+        */
+        valorFalta.innerHTML = mensagens.cargaHorariaNaoDigitada;
     } else if (faltas > limiteFaltas) {
         /**
-         * Error message displayed when the number of absences exceeds the maximum allowed.
-         * @type {string}
-         */
-        const mensagemLimiteFaltasHTML = "<span class=''>Infelizmente </span><span class='alerta'>você está reprovado</span><span class=''> por faltas</span>";
-        valorFalta.innerHTML = mensagemLimiteFaltasHTML;
+        * Mensagem de erro exibida quando o aluno estiver reprovado por faltas.
+        * @type {string}
+        */
+        valorFalta.innerHTML = mensagens.reprovadoPorFaltas;
     } else {
         faltas = faltas.trim() === '' ? 0 : parseFloat(faltas);
-        let porcentagemFaltas = ((faltas / limiteFaltas) * 100);
+        let porcentagemFaltas = (faltas / limiteFaltas) * 100;
         mostrarResultado(porcentagemFaltas, faltas, limiteFaltas);
     }
 }
 
+/**
+ * Exibe o resultado do cálculo na página.
+ * @param {number} porcentagemFaltas - A porcentagem de faltas.
+ * @param {number} faltas - O número de faltas.
+ * @param {number} limiteFaltas - O número máximo de faltas permitidas.
+ * @returns {void}
+ */
 function mostrarResultado(porcentagemFaltas, faltas, limiteFaltas) {
     const mensagemLimiteFaltasHTML =
-    "<div class='slide-range-outinput'>" +
-    "<div class='slider-value'>" + porcentagemFaltas.toFixed(2) + "%</div>" +
-    "<div class='slider-value'>" + limiteFaltas + "</div>" +
-    "</div>" +
-    "<div class='slider-container'>" +
-    "<input class='_range slider pontoFaltas no-thumb' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas / limiteFaltas + ", #667074)); cursor: initial !important;' disabled>" +
-    "</div>" +
-    "<div class='' style='text-align: center;'>" +
-    "<span class=''>você </span><span class='regular'>pode faltar " + (limiteFaltas - faltas) + "</span><span class=''> de " + limiteFaltas + "</span>" +
-    "</div>";
+        "<div class='slide-range-outinput'>" +
+        "<div class='slider-value'>" + porcentagemFaltas.toFixed(2) + "%</div>" +
+        "<div class='slider-value'>" + limiteFaltas + "</div>" +
+        "</div>" +
+        "<div class='slider-container'>" +
+        "<input class='_range slider pontoFaltas no-thumb' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas / limiteFaltas + ", #667074)); cursor: initial !important;' disabled>" +
+        "</div>" +
+        "<div class='' style='text-align: center;'>" +
+        "<span class=''>você </span><span class='regular'>pode faltar " + (limiteFaltas - faltas) + "</span><span class=''> de " + limiteFaltas + "</span>" +
+        "</div>";
 
     valorFalta.innerHTML = mensagemLimiteFaltasHTML;
 }
 
+/**
+ * Exibe o valor do controle deslizante de carga horária.
+ * @returns {void}
+ */
 function mostraValorCargaHoraria() {
     cargaHorariaValorOutput.textContent = cargaHorariaSlider.value;
     calculaFaltas(cargaHorariaSlider.value, faltasCargaHoraria.value);
@@ -75,6 +110,10 @@ faltasCargaHoraria.addEventListener("input", function () {
 document.querySelectorAll("[data-cargaHoraria-input]").forEach(function (el) {
     el.oninput = function () {
         var valPercent = (el.valueAsNumber - parseInt(el.min)) / (parseInt(el.max) - parseInt(el.min));
+        /**
+         * O estilo CSS para a imagem de fundo de um elemento, criado usando um gradiente webkit.
+         * @type {string}
+         */
         var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(' + valPercent + ', rgb(207, 203, 203)), color-stop(' + valPercent + ', #667074));';
         el.style = style;
     };

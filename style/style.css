@@ -22,7 +22,6 @@ ul li a {
 
 nav {
     background-color: #667074;
-    justify-content: flex-end !important;
     position: absolute !important;
     width: -webkit-fill-available !important;
 }
@@ -147,7 +146,6 @@ footer {
 }
 
 .logo {
-    margin-right: 65px !important;
     margin-left: 20px;
     font-weight: 700;
 }
@@ -372,6 +370,9 @@ span {
 @media only screen and (max-width: 768px) {
 
     /* For mobile phones: */
+    [class*="logo"] {
+        margin-left: 35% !important;
+    }
     [class*="divMetade"] {
         width: 100%;
         margin-bottom: 1rem;
@@ -386,17 +387,17 @@ span {
     u {
         font-size: 2.2vw !important;
     }
-    .gradeCurso{
+    [class*="gradeCurso"] {
         grid-template-columns: 1fr !important;
         align-items: flex-start !important;;
     }
-    .centralizarGrade{
+    [class*="centralizarGrade"] {
         margin-left: 40px !important;
     }
-    .nomeMateriaLager{
-       font-size: 2.5VW !important;
+    [class*="nomeMateriaLager"] {
+        font-size: 2.5VW !important;
     }
-    .swiper-slide{
+    [class*="swiper-slide"] {
         width: auto !important;
     }
 }
@@ -406,6 +407,9 @@ span {
 
 #overlay.visible {
     display: block;
+}
+.visible {
+    display: block !important;
 }
 .regular {
     background-color: #667074;
