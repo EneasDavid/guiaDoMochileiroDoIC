@@ -7,13 +7,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0px;
-    background-color: #3f3939 !important;
+    background-color: #2C3333 !important;
 }
 
-.dropdown-menu {
-    background-color: #667074 !important;
-    border: none;
-}
 
 ul li a {
     text-decoration: none;
@@ -21,7 +17,7 @@ ul li a {
 }
 
 nav {
-    background-color: #667074;
+    background-color: #395B64;
     position: absolute !important;
     width: -webkit-fill-available !important;
 }
@@ -59,7 +55,7 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: #585453;
+    background-color: #3F4E4F;
     /* Cor de preenchimento quando a "bolinha" está sob o cursor */
 }
 input.pontoFaltas[type="range"]::-webkit-slider-thumb:hover {
@@ -110,7 +106,7 @@ input.pontoFaltas[type="range"] {
 .slider {
     -webkit-appearance: none;
     height: 10px;
-    background: #667074;
+    background: #395B64;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -131,7 +127,7 @@ input.pontoFaltas[type="range"] {
     appearance: none;
     width: 20px;
     height: auto;
-    background: #585453;
+    background: #3F4E4F;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -184,31 +180,31 @@ footer {
 
 /* Dependências (azul) */
 .materiasDependencia {
-    background-color: #315763 !important; /* Cor de fundo para dependências (azul) */
+    background-color: #1C6758 !important; /* Cor de fundo para dependências (azul) */
 }
 
 /* Pendências (amarelo) */
 .materiasDepende {
-    background-color: #5f5d50 !important; /* Cor de fundo para pendências (amarelo) */
+    background-color: #87805E !important; /* Cor de fundo para pendências (amarelo) */
 }
 
 .impar {
     text-align: center;
     /* Ajuste o alinhamento conforme necessário */
-    background-color: #585453;
+    background-color: #3F4E4F;
 }
 
 .par {
     text-align: center;
     /* Ajuste o alinhamento conforme necessário */
-    background-color: #4b494b;
+    background-color: #2E4F4F;
 }
 
 .materia {
     flex: 1; /* Faz com que todas as matérias tenham o mesmo tamanho */
     margin: 0px 5px; /* Adiciona o espaçamento horizontal entre as matérias */
     max-width: 9rem;
-    background: #666f74;
+    background: #698269;
     border-radius: 13px;
     height: 68%;
     overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo excede a altura da div */
@@ -226,11 +222,11 @@ footer {
   
 .enfaseSeletor {
     margin: 10px;
-    background: #3f3939;
-    border: 1px solid #666f74;
+    background: #2C3333;
+    border: 1px solid #698269;
     border-radius: 30px;
     padding: 10px;
-    color: #666f74;
+    color: #698269;
     text-align: center;
     font-weight: 700;
     user-select: none;
@@ -246,11 +242,11 @@ footer {
     cursor: pointer;
 }
 .enfaseSeletor:hover{
-    background: #666f74;
+    background: #698269;
     color: #cfcbcb;
 }
 .selecionado{
-    background: #666f74 !important;
+    background: #698269 !important;
     color: #cfcbcb !important;
 }
   
@@ -280,7 +276,7 @@ input {
     border: none;
     padding: 10px 15px;
     margin-top: 16px;
-    background-color: #667074;
+    background-color: #395B64;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -317,7 +313,7 @@ p3 {
     font-weight: 700;
     letter-spacing: .004em;
     font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #667074;
+    color: #395B64;
 }
 
 p2,
@@ -325,7 +321,7 @@ p2 u {
     font-size: 15px;
     letter-spacing: clamp(0.004em, 0.004em, 0.004em);
     font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #667074;
+    color: #395B64;
     text-align: center;
 }
 
@@ -364,7 +360,7 @@ p2 u {
 }
 
 span {
-    color: #667074;
+    color: #395B64;
 }
 
 @media only screen and (max-width: 768px) {
@@ -412,12 +408,12 @@ span {
     display: block !important;
 }
 .regular {
-    background-color: #667074;
+    background-color: #395B64;
     color: #cfcbcb;
 }
 
 .alerta {
-    background-color: rgb(187, 132, 116);
+    background-color: #A27B5C;
     color: #cfcbcb;
 }
 
@@ -427,7 +423,7 @@ span {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #667074;
+    background-color: #395B64;
     /* Cor de fundo do botão */
     color: #fff;
     /* Cor do texto */
@@ -441,7 +437,7 @@ span {
 }
 
 #back-to-top:hover {
-    background-color: #585453;
+    background-color: #3F4E4F;
     /* Cor de fundo ao passar o mouse */
 }
 

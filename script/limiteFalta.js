@@ -84,7 +84,7 @@ function mostrarResultado(porcentagemFaltas, faltas, limiteFaltas) {
         "<div class='slider-value'>" + limiteFaltas + "</div>" +
         "</div>" +
         "<div class='slider-container'>" +
-        "<input class='_range slider pontoFaltas no-thumb' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", rgb(207, 203, 203)), color-stop(" + faltas / limiteFaltas + ", #667074)); cursor: initial !important;' disabled>" +
+        "<input class='_range slider pontoFaltas no-thumb' name='limiteFaltas' type='range' min='0' max='" + limiteFaltas + "' value='" + faltas + "' step='1' style='background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(" + faltas / limiteFaltas + ", #698269), color-stop(" + faltas / limiteFaltas + ", #667074)); cursor: initial !important;' disabled>" +
         "</div>" +
         "<div class='' style='text-align: center;'>" +
         "<span class=''>você </span><span class='regular'>pode faltar " + (limiteFaltas - faltas) + "</span><span class=''> de " + limiteFaltas + "</span>" +
@@ -114,7 +114,7 @@ document.querySelectorAll("[data-cargaHoraria-input]").forEach(function (el) {
          * O estilo CSS para a imagem de fundo de um elemento, criado usando um gradiente webkit.
          * @type {string}
          */
-        var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(' + valPercent + ', rgb(207, 203, 203)), color-stop(' + valPercent + ', #667074));';
+        var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(' + valPercent + ', #698269), color-stop(' + valPercent + ', #667074));';
         el.style = style;
     };
     el.oninput();
