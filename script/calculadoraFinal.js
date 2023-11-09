@@ -48,14 +48,23 @@ function limpar(campo) {
  * @param {number} [notaReav] - A nota de reavaliação (opcional).
  */
 function calcMedia(nota1, nota2, notaReav) {
-    if(notaReav != ''){
-        if(nota1>=nota2 && notaReav>nota2){
-            nota2=notaReav;
-        }else if(nota2>=nota1 && notaReav>nota1){
-            nota1=notaReav;
+    let notaUm = parseFloat(nota1);
+    let notaDois = parseFloat(nota2);
+    let notaReavaliacao = parseFloat(notaReav);
+
+    if (!isNaN(notaReavaliacao)) {
+        console.log(notaUm, notaDois);
+        if (notaUm > notaDois) {
+            if (notaReavaliacao > notaDois) {
+                console.log("chegamos aqui");
+                notaDois = notaReavaliacao;
+            }
+        } else if (notaReavaliacao > notaUm) {
+            notaUm = notaReavaliacao;
         }
     }
-    media=(parseFloat(nota1)+parseFloat(nota2))/2;
+    console.log(notaUm, notaDois);
+    media = (notaUm + notaDois) / 2;
     /**
     * Mensagem de erro exibida quando as notas são inválidas.
     * @type {string}
@@ -63,6 +72,7 @@ function calcMedia(nota1, nota2, notaReav) {
     const mensagemMediaHTML = `<span class=''>Sua média regular é: <span class='regular'>${media.toFixed(2)}</span></span>`;
     valorMedia.innerHTML = mensagemMediaHTML;
 }
+
 
 /**
  * Calcula a nota final do aluno com base na média atual e na nota mínima necessária na final.
