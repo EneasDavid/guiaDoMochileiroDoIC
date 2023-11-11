@@ -16,158 +16,134 @@ const materiasRelacoes = new Map([
     ["P1", {
         depende: [],
         dependencias: ["ED", "RC"],
-        enfase: [],
     }],
     // Lógica Aplicada a Computação
     ["LAC", {
         depende: [],
         dependencias: ["IA"],
-        enfase: [],
     }],
     // Cálculo Diferencial e Integral
     ["CDI", {
         depende: [],
         dependencias: ["PE", "C3"],
-        enfase: [],
     }],
     // Computação, Sociedade e Ética
     ["CSE", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // Matemática Discreta
     ["MD", {
         depende: [],
         dependencias: ["TG"],
-        enfase: [],
     }],
     // SEGUNDA PERIODO
     // Estrutura de Dados
     ["ED", {
         depende: ["P1"],
         dependencias: ["TG", "P2", "P3", "PAA", "IA", "COMPILADORES"],
-        enfase: [],
     }],
     // Banco de Dados
     ["BD", {
         depende: [],
         dependencias: ["P2", "P3"],
-        enfase: [],
     }],
     // Geometria Analítica
     ["GA", {
         depende: [],
         dependencias: ["AL"],
-        enfase: [],
     }],
     // Organização e Arquitetura de Computadores
     ["OAC", {
         depende: [],
         dependencias: ["SO"],
-        enfase: [],
     }],
     // TERCEIRO PERIODO
     // Teoria dos Grafos
     ["TG", {
         depende: ["ED", "MD"],
-        dependencias: [],
-        enfase: [],
+        dependencias: ["PAA"],
     }],
     // Redes de Computadores
     ["RC", {
         depende: ["P1"],
         dependencias: ["P2", "P3"],
-        enfase: [],
     }],
     // Probabilidade e Estatistica
     ["PE", {
         depende: ["CDI"],
         dependencias: [],
-        enfase: [],
     }],
     // Álgebra Linear
     ["AL", {
         depende: ["GA"],
         dependencias: [],
-        enfase: [],
     }],
     // QUARTO PERIODO
     // Programação 2
     ["P2", {
         depende: ["ED", "RC", "BD"],
         dependencias: [],
-        enfase: [],
     }],
     // Programação 3
     ["P3", {
         depende: ["ED", "RC", "BD"],
-        dependencias: [],
-        enfase: [],
+        dependencias: ["IHM"],
+
     }],
     // Projeto de Análise de Algoritmos
     ["PAA", {
         depende: ["ED", "TG"],
         dependencias: [],
-        enfase: [],
     }],
     // Teoria da Computação
     ["TC", {
         depende: [],
         dependencias: ["COMPILADORES"],
-        enfase: [],
     }],
     // QUINTO PERIODO
     // Compiladores
     ["COMPILADORES", {
         depende: ["ED", "TC"],
         dependencias: [],
-        enfase: [],
     }],
     // Inteligência Artificial
     ["IA", {
         depende: ["LAC", "ED"],
         dependencias: [],
-        enfase: [],
     }],
     // Sistemas Operacionais
     ["SO", {
         depende: ["OAC"],
         dependencias: [],
-        enfase: [],
     }],
     // Computação Gráfica
     ["CG", {
-        depende: ["OAC"],
-        dependencias: [],
-        enfase: [],
+        depende: [],
+        dependencias: ["PDI"],
     }],
     // SEXTO PERIODO
     // Projeto e Desenvolvimento de Sistemas
     ["PDS", {
-        depende: ["P1", "LAC", "CDI", "SCE", "MD", "ED", "BD", "GA", "OAC", "TG", "RC", "PE", "AL", "P2", "P3", "PAA", "TC", "COMPILADORES", "IA", "SO", "CG"],
+        depende: ["P1", "CSE", "LAC", "CDI", "MD", "ED", "BD", "GA", "OAC", "TG", "RC", "PE", "AL", "P2", "P3", "PAA", "TC", "COMPILADORES", "IA", "SO", "CG"],
         dependencias: [],
-        enfase: [],
     }],
     // SETIMO PERIODO
     // Metodologia de Pesquisa e Trabalho Individual
     ["MPTI", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // Noções de Direito
     ["ND", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // OITAVO PERIODO
     // Trabalho de Conclusão de Curso
     ["TCC", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
 ]);
 const enfase_SC = new Map([
@@ -189,19 +165,16 @@ const enfase_SC = new Map([
     ["FPGA", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // Sistemas Embarcados
     ["SE", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // Microcontroladores e Aplicações
     ["MA", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
 ]);
 const enfase_SI = new Map([
@@ -221,7 +194,7 @@ const enfase_SI = new Map([
     }],
     // INTERAÇÃO HOMEM MAQUINA
     ["IHM", {
-        depende: [],
+        depende: ["P3"],
         dependencias: [],
     }],
     // Gerência de Projetos
@@ -259,7 +232,6 @@ const enfase_SInt = new Map([
     ["CE", {
         depende: [],
         dependencias: [],
-        enfase: [],
     }],
     // Ciência de Dados
     ["CD", {
@@ -285,7 +257,7 @@ const enfase_CV = new Map([
     }],
     //PROCESSAMENTO DIGITAL DE IMAGENS
     ["PDI", {
-        depende: [],
+        depende: ["CG"],
         dependencias: [],
     }],
     // Aprendizado de Máquina
@@ -399,7 +371,6 @@ function atualizarMateriasEletivas(materiasEletivas, materiaInfo, contador) {
             }
         }
     });
-    console.log(contador);
 }
 
 /**
