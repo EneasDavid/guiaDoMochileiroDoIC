@@ -404,6 +404,14 @@ span {
     [class*="swiper-slide"] {
         width: auto !important;
     }
+    [class*="carrossel"] {
+        justify-content: normal !important;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    [class*="carrossel"] {
+        justify-content: normal !important;
+    }
 }
 #overlay {
     display: none;

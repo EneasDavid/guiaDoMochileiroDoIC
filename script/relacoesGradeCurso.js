@@ -312,6 +312,11 @@ const overlay = document.getElementById("overlay");
 const eletiva = document.querySelectorAll(".enfaseSeletor");
 const eletivasArmazena = new Map();
 
+/**
+ * Adiciona ouvintes de eventos aos elementos "eletiva" e atualiza as "eletivas" selecionadas.*
+ * @function
+ * @returns {void}
+ */
 function adicionarListenersEletivas() {
     eletiva.forEach((elemento) => {
         elemento.addEventListener("click", () => {
@@ -335,7 +340,7 @@ function adicionarListenersEletivas() {
             eletivasArmazena.set(elemento, fila);
             elemento.classList.add("selecionado");
             const materiaInfo = construirMateriaInfo(eletivasArmazena);
-            atualizarMateriasEletivas(document.querySelectorAll('.materia[data-div-materia="ELETIVA"]'), materiaInfo);
+            atualizarMateriasEletivas(document.querySelectorAll('.eletiva'), materiaInfo, 0);
         });
     });
 }
@@ -372,16 +377,29 @@ function construirMateriaInfo(eletivasArmazena) {
  * @param {Array} materiasEletivas - Array de elementos HTML que representam as matérias eletivas.
  * @param {Array} materiaInfo - Array de objetos que contêm informações sobre as matérias.
  */
-function atualizarMateriasEletivas(materiasEletivas, materiaInfo) {
-    let contador = 0;
+function atualizarMateriasEletivas(materiasEletivas, materiaInfo, contador) {
+
     materiasEletivas.forEach((materiaEletiva) => {
         if (contador < materiaInfo.length) {
-            // Atualize o atributo data-div-materia
-            //materiaEletiva.setAttribute('data-div-materia', materiaInfo[contador].ref);
-            materiaEletiva.innerHTML = `<span class='nomeMateria nomeMateriaLager'>${materiaInfo[contador].ref}</span>`;
+            const novaMateria = materiaInfo[contador].ref;
+
+            // Verifica se a matéria é diferente antes de atribuir
+            if (materiaEletiva.getAttribute('data-div-materia') !== novaMateria) {
+                materiaEletiva.setAttribute('data-div-materia', novaMateria);
+                materiaEletiva.innerHTML = `<span class='nomeMateria'>${novaMateria}</span>`;
+            }
+
             contador++;
+        } else {
+            // Se não houver mais informações, atualize para a mensagem padrão
+            const valorPadrao = 'ELETIVA';
+            if (materiaEletiva.getAttribute('data-div-materia') !== valorPadrao) {
+                materiaEletiva.setAttribute('data-div-materia', valorPadrao);
+                materiaEletiva.innerHTML = `<span class="nomeMateria nomeMateriaLager">${valorPadrao}</span>`;
+            }
         }
     });
+    console.log(contador);
 }
 
 /**
