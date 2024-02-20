@@ -1,9 +1,13 @@
 /**
- * Este script contém um mapa que relaciona as matérias do curso com suas dependências e dependências diretas, bem como funções para destacar e remover destaques das matérias na grade do curso e mostrar/ocultar um overlay com as dependências e matérias dependentes quando uma matéria é clicada. Também seleciona todos os elementos com a classe "enfaseSeletor" e adiciona um ouvinte de eventos para armazenar seus valores selecionados em um mapa.
+ * 
+ * Este script contém um mapa que relaciona as matérias do curso com suas dependências e 
+ * dependências diretas, bem como funções para destacar e remover destaques das matérias 
+ * na grade do curso e mostrar/ocultar um overlay com as dependências e matérias dependentes 
+ * quando uma matéria é clicada. Também seleciona todos os elementos com a classe "enfaseSeletor" 
+ * e adiciona um ouvinte de eventos para armazenar seus valores selecionados em um mapa.
  * 
  * @summary Script para as dependências e matérias dependentes da grade do curso.
  * @since 1.0.0
- * @file Este script está localizado em /d:/guiaDoMochileiroDoIC/script/relacoesGradeCurso.js
  */
 
 const materiasRelacoes = new Map([
@@ -272,6 +276,7 @@ const enfase_CV = new Map([
     }],
 ]);
 
+//Dicionario com os significados das enfases
 const enfases = {
     SC: enfase_SC,
     SI: enfase_SI,
@@ -348,6 +353,7 @@ function construirMateriaInfo(eletivasArmazena) {
  *
  * @param {Array} materiasEletivas - Array de elementos HTML que representam as matérias eletivas.
  * @param {Array} materiaInfo - Array de objetos que contêm informações sobre as matérias.
+ * @returns {void}
  */
 function atualizarMateriasEletivas(materiasEletivas, materiaInfo, contador) {
 
@@ -390,6 +396,7 @@ function getMateriaSelecionadaRelacao(materiaSelecionada) {
  * @param {string} materiaSelecionadaRelacao.materiaSelecionada - A matéria selecionada.
  * @param {Array} materiaSelecionadaRelacao.dependencias - Um array de matérias nas quais a matéria selecionada depende.
  * @param {Array} materiaSelecionadaRelacao.depende - Um array de matérias que dependem da matéria selecionada.
+ * @returns {void}
  */
 function destacarMateria(materiaSelecionadaRelacao) {
     divMateria.forEach((elemento) => {
