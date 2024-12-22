@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0px;
-    background-color: #2C3333 !important;
+    background-color: #F4F4F4 !important;
 }
 .card-container {
     display: flex;
@@ -180,6 +180,7 @@ input.pontoFaltas[type="range"] {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    transition: background-color 0.3s ease;
     width: 14rem;
     padding: 0 !important;
     width: -webkit-fill-available !important;
@@ -187,7 +188,7 @@ input.pontoFaltas[type="range"] {
 }
 
 .slider-value {
-    color: #cfcbcb;
+    color: #395B64;
     font-weight: 600;
 }
 
@@ -289,11 +290,11 @@ footer {
   
 .enfaseSeletor {
     margin: 10px;
-    background: #2C3333;
+    background: #70868c;
     border: 1px solid #3a5b64;
     border-radius: 30px;
     padding: 10px;
-    color: #3a5b64;
+    color: #f4f4f4;
     text-align: center;
     font-weight: 700;
     user-select: none;
@@ -314,7 +315,7 @@ footer {
 }
 .selecionado{
     background: #3a5b64 !important;
-    color: #cfcbcb !important;
+    color: #f4f4f4 !important;
 }
   
 .nomeMateria {
@@ -329,7 +330,7 @@ footer {
 }
 .nomePeriodo{
     font-weight: 900;
-    color: #cfcbcb !important;
+    color: #2E2E2E !important;
     float: left;
     MARGIN-LEFT: 15PX;
 }
@@ -343,13 +344,31 @@ input {
     border: none;
     padding: 10px 15px;
     margin-top: 16px;
-    background-color: #395B64;
+    background-color: #909799;
+    transition: all 0.3s ease;
 }
-
+  
+  /* Input preenchido com valor válido */
+  input[type="number"]:valid {
+    background-color: #718a8f;
+    border: 1px solid #718a8f;
+  }
+  
+  /* Input com valor inválido */
+  input[type="number"]:invalid {
+    background-color: #909799;
+    border: 4px solid #8a3b3b; 
+    color: #8a3b3b;
+  }
+input[type="number"]:placeholder-shown {
+    background-color: #909799;
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    background-color: #909799;
+    
 }
 
 input::placeholder {
@@ -404,7 +423,7 @@ p2 u {
 .legenda, .legenda u {
     width: 80%;
     margin-bottom: 1rem;
-    color: #c8c8c8 !important;
+    color: #2E2E2E !important;
 }
 
 .overlay {
@@ -492,13 +511,13 @@ span {
     display: block !important;
 }
 .regular {
-    background-color: #395B64;
-    color: #cfcbcb;
+    background-color: #718a8f;
+    color: #f4f4f4;
 }
 
 .alerta {
     background-color: #A27B5C;
-    color: #cfcbcb;
+    color: #f1bcc1;
 }
 
 #back-to-top {
@@ -539,4 +558,8 @@ a.link-plain {
 a {
     text-decoration: none;
     color: #cfcbcb !important;
+}
+
+footer a{
+    color: #3a5b64 !important;
 }
