@@ -344,6 +344,23 @@ footer {
     user-select: none;
     cursor: default;
 }
+.nomeMateriaHover{
+    display: none;
+}
+.materia:hover .nomeMateriaHover {
+    display: block;
+    font-weight: 900;
+    display: grid;
+    height: 100%;
+    align-items: center;
+    color: #f4f4f4 !important;
+    OVERFLOW: hidden;
+    user-select: none;
+    cursor: default;
+}
+.materia:hover .nomeMateria{
+    display: none;
+}
 .nomePeriodo{
     font-weight: 900;
     color: #2E2E2E !important;

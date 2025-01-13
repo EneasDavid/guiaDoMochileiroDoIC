@@ -156,27 +156,32 @@ const enfase_SC = new Map([
      * @type {Map<string, {depende: string[], dependencias: string[]}>}
     */
     // Cálculo 3
-    ["C3", {
+    ["C3",{
+        nome: "Caculo 3",
         depende: ["CDI"],
         dependencias: ["AM", "SD"],
     }],
     // Sistemas Digitais
     ["SD", {
+        nome: "Sistemas Digitais",
         depende: ["C3"],
         dependencias: [],
     }],
     // FPGA
     ["FPGA", {
+        nome: "Field Programmable Gate Array",
         depende: [],
         dependencias: [],
     }],
     // Sistemas Embarcados
     ["SE", {
+        nome: "Sistemas Embarcados",
         depende: [],
         dependencias: [],
     }],
     // Microcontroladores e Aplicações
     ["MA", {
+        nome: "Microcontroladores e Aplicações",
         depende: [],
         dependencias: [],
     }],
@@ -188,26 +193,31 @@ const enfase_SI = new Map([
     */
     // Conceitos de Linguagens de Programação
     ["CLP", {
+        nome: "Conceitos de Linguagem de Programação",
         depende: [],
         dependencias: [],
     }],
     // Sistemas Distribuídos
     ["SDI", {
+        nome: "Sistemas Distribuidos",
         depende: [],
         dependencias: [],
     }],
     // INTERAÇÃO HOMEM MAQUINA
     ["IHM", {
+        nome: "Interação Homem Maquina",
         depende: ["P3"],
         dependencias: [],
     }],
     // Gerência de Projetos
     ["GP", {
+        nome: "Gerencia de projetos",
         depende: ["PDS"],
         dependencias: [],
     }],
     // Segurança de Sistemas Computacionais
     ["SSC", {
+        nome: "Segurança de sistemas computacionais",
         depende: ["RC"],
         dependencias: [],
     }],
@@ -219,26 +229,31 @@ const enfase_SInt = new Map([
     */
     // Cálculo 3
     ["C3", {
+        nome: "Caculo 3",
         depende: ["CDI"],
         dependencias: ["AM", "SD"],
     }],
     // Aprendizado de Máquina
     ["AM", {
+        nome: "Aprendizado de Maquina",
         depende: ["C3"],
         dependencias: [],
     }],
     // Redes Neurais Artificiais e Processamento de Linguagem Natural
     ["RNAP", {
+        nome: "Redes Neurais e Aprendizado Profundo",
         depende: [],
         dependencias: [],
     }],
     // Computação Evolucionária
     ["CE", {
+        nome: "Computação Evolucionaria",
         depende: [],
         dependencias: [],
     }],
     // Ciência de Dados
     ["CD", {
+        nome: "Ciencia de Dados",
         depende: ["PE"],
         dependencias: [],
     }],
@@ -251,26 +266,31 @@ const enfase_CV = new Map([
     */
     // Cálculo 3
     ["C3", {
+        nome: "Caculo 3",
         depende: ["CDI"],
         dependencias: ["AM", "SD"],
     }],
     // Redes Neurais Artificiais e Processamento de Linguagem Natural
     ["RNAP", {
+        nome: "Redes Neurais e Aprendizado Profundo",
         depende: [],
         dependencias: [],
     }],
     //PROCESSAMENTO DIGITAL DE IMAGENS
     ["PDI", {
+        nome: "Processamento Digital de Imagens",
         depende: ["CG"],
         dependencias: [],
     }],
     // Aprendizado de Máquina
     ["AM", {
+        nome: "Aprendizado de Maquina",
         depende: ["C3"],
         dependencias: [],
     }],
     // Visão Computacional
     ["CV", {
+        nome: "Computação Visual",
         depende: [],
         dependencias: [],
     }],
@@ -338,6 +358,7 @@ function construirMateriaInfo(eletivasArmazena) {
                 if (!referenciaExistente) {
                     const info = {
                         ref: referencia,
+                        nome: enfaseMap.get(referencia)?.nome || "Nome não encontrado",
                     };
                     materiaInfo.push(info);
                 }
@@ -359,12 +380,13 @@ function atualizarMateriasEletivas(materiasEletivas, materiaInfo, contador) {
 
     materiasEletivas.forEach((materiaEletiva) => {
         if (contador < materiaInfo.length) {
-            const novaMateria = materiaInfo[contador].ref;
-
+            console.log(materiaInfo);
+            const novaMateriaSigla = materiaInfo[contador].ref;
+            const novaMateriaNome=materiaInfo[contador].nome;
             // Verifica se a matéria é diferente antes de atribuir
-            if (materiaEletiva.getAttribute('data-div-materia') !== novaMateria) {
-                materiaEletiva.setAttribute('data-div-materia', novaMateria);
-                materiaEletiva.innerHTML = `<span class='nomeMateria'>${novaMateria}</span>`;
+            if (materiaEletiva.getAttribute('data-div-materia') !== novaMateriaSigla) {
+                materiaEletiva.setAttribute('data-div-materia', novaMateriaSigla);
+                materiaEletiva.innerHTML = `<span class='nomeMateria'>${novaMateriaSigla}</span> <span class='nomeMateriaHover'>${novaMateriaNome}</span>`;
             }
 
             contador++;
@@ -373,7 +395,7 @@ function atualizarMateriasEletivas(materiasEletivas, materiaInfo, contador) {
             const valorPadrao = 'ELETIVA';
             if (materiaEletiva.getAttribute('data-div-materia') !== valorPadrao) {
                 materiaEletiva.setAttribute('data-div-materia', valorPadrao);
-                materiaEletiva.innerHTML = `<span class="nomeMateria nomeMateriaLager">${valorPadrao}</span>`;
+                materiaEletiva.innerHTML = `<span class="nomeMateria nomeMateriaLager">${valorPadrao}</span> <span class='nomeMateriaHover'>${valorPadrao}</span>`;
             }
         }
     });
