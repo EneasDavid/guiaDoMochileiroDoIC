@@ -292,7 +292,6 @@ footer {
     border-radius: 13px;
     height: 68%;
     overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo excede a altura da div */
-
 }  
 
 .materia.center {
@@ -346,6 +345,10 @@ footer {
 }
 .nomeMateriaHover{
     display: none;
+}
+.materia:hover{
+    /*zoom:1.5;*/
+    font-size: 65%;
 }
 .materia:hover .nomeMateriaHover {
     display: block;
